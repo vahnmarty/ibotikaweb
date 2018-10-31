@@ -3,111 +3,137 @@
 @section('title', app_name() . ' | ' . __('labels.frontend.auth.register_box_title'))
 
 @section('content')
-    <div class="row justify-content-center align-items-center">
-        <div class="col col-sm-8 align-self-center">
-            <div class="card">
-                <div class="card-header">
-                    <strong>
-                        @lang('labels.frontend.auth.register_box_title')
-                    </strong>
-                </div><!--card-header-->
+<section class="pt32 bg-secondary">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <form method="POST" action="{{ url('register') }}">
+                            @csrf
+                            <div class="feature feature-3 boxed bg-secondary">
+                                <h3>Sign up in iBotika today!</h3>
+                                <p>
+                                    Get unlimited access to locally-approved drug information, medical news and disease treatment guidelines on the go!
+                                </p>
+                                <hr class="pink-line" />
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label>I am a :</label>
+                                            <div class="select-option">
+                                                <i class="ti-angle-down"></i>
+                                                <select name="type" required data-old="{{ old('type') }}">
+                                                    <option selected>Citizen</option>
+                                                    <option >Doctor</option>
+                                                    <option >Pharmacist</option>
+                                                    <option >Pharmacy Owner</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                <div class="card-body">
-                    {{ html()->form('POST', route('frontend.auth.register.post'))->open() }}
-                        <div class="row">
-                            <div class="col-12 col-md-6">
-                                <div class="form-group">
-                                    {{ html()->label(__('validation.attributes.frontend.first_name'))->for('first_name') }}
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>First Name:</label>
+                                            <input type="text" name="first_name" placeholder="First Name" required value="{{ old('first_name') }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Last Name:</label>
+                                            <input type="text" name="last_name" placeholder="Last Name" required value="{{ old('last_name') }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label>Email Address:</label>
+                                            <input type="text" name="email" placeholder="Email Address" required value="{{ old('email') }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label>Password:</label>
+                                            <input type="password" name="password" placeholder="********" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label>Confirm Password:</label>
+                                            <input type="password" name="password_confirmation" placeholder="********" required class="mb0">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <div class="checkbox">
+                                              <label><input type="checkbox" value="agree" required>I agree to the <a href="">Terms of Use</a> and <a href="">Privacy Policy</a> and I voluntarily consent to the processing of my personal data as set forth in the Privacy Policy.</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-filled btn-block">Create Account</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  
+                        </form>                                             
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="feature feature-3 boxed">
 
-                                    {{ html()->text('first_name')
-                                        ->class('form-control')
-                                        ->placeholder(__('validation.attributes.frontend.first_name'))
-                                        ->attribute('maxlength', 191) }}
-                                </div><!--col-->
-                            </div><!--row-->
+                            <div class="col-sm-12 mb16 v-align-children">
+                                <div class="col-sm-3 pl0 pr0">
+                                    <img class="image-md" src="img/pharmacy.png">
+                                    
+                                </div>
 
-                            <div class="col-12 col-md-6">
-                                <div class="form-group">
-                                    {{ html()->label(__('validation.attributes.frontend.last_name'))->for('last_name') }}
-
-                                    {{ html()->text('last_name')
-                                        ->class('form-control')
-                                        ->placeholder(__('validation.attributes.frontend.last_name'))
-                                        ->attribute('maxlength', 191) }}
-                                </div><!--form-group-->
-                            </div><!--col-->
-                        </div><!--row-->
-
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    {{ html()->label(__('validation.attributes.frontend.email'))->for('email') }}
-
-                                    {{ html()->email('email')
-                                        ->class('form-control')
-                                        ->placeholder(__('validation.attributes.frontend.email'))
-                                        ->attribute('maxlength', 191)
-                                        ->required() }}
-                                </div><!--form-group-->
-                            </div><!--col-->
-                        </div><!--row-->
-
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    {{ html()->label(__('validation.attributes.frontend.password'))->for('password') }}
-
-                                    {{ html()->password('password')
-                                        ->class('form-control')
-                                        ->placeholder(__('validation.attributes.frontend.password'))
-                                        ->required() }}
-                                </div><!--form-group-->
-                            </div><!--col-->
-                        </div><!--row-->
-
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    {{ html()->label(__('validation.attributes.frontend.password_confirmation'))->for('password_confirmation') }}
-
-                                    {{ html()->password('password_confirmation')
-                                        ->class('form-control')
-                                        ->placeholder(__('validation.attributes.frontend.password_confirmation'))
-                                        ->required() }}
-                                </div><!--form-group-->
-                            </div><!--col-->
-                        </div><!--row-->
-
-                        @if(config('access.captcha.registration'))
-                            <div class="row">
-                                <div class="col">
-                                    {!! Captcha::display() !!}
-                                    {{ html()->hidden('captcha_status', 'true') }}
-                                </div><!--col-->
-                            </div><!--row-->
-                        @endif
-
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group mb-0 clearfix">
-                                    {{ form_submit(__('labels.frontend.auth.register_button')) }}
-                                </div><!--form-group-->
-                            </div><!--col-->
-                        </div><!--row-->
-                    {{ html()->form()->close() }}
-
-                    <div class="row">
-                        <div class="col">
-                            <div class="text-center">
-                                {!! $socialiteLinks !!}
+                                <div class="col-sm-9 pl-xs-0 mt-xs-8">
+                                    <p class="mb0 lead line-h13">Are you a</p>
+                                    <h5 class="font-bold mb8 line-h13 font17">PHARMACY OWNER?</h5>
+                                    <a href="" class="font-bold font12">See how iBotika Plus can help.</a>
+                                </div>
                             </div>
-                        </div><!--/ .col -->
-                    </div><!-- / .row -->
 
-                </div><!-- card-body -->
-            </div><!-- card -->
-        </div><!-- col-md-8 -->
-    </div><!-- row -->
+                            <hr>
+
+                            <div class="col-sm-12 mb16 v-align-children">
+                                <div class="col-sm-3 pl0 pr0">
+                                    <img class="image-md" src="img/doctor.png">
+                                    
+                                </div>
+
+                                <div class="col-sm-9 pl-xs-0 mt-xs-8">
+                                    <p class="mb0 lead line-h13">Are you a</p>
+                                    <h5 class="font-bold mb8 line-h13 font17">DOCTOR?</h5>
+                                    <a href="" class="font-bold font12">See how iBotika App can help.</a>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="col-sm-12 mb16 v-align-children">
+                                <div class="col-sm-3 pl0 pr0">
+                                    <img class="image-md" src="img/pharma.png">
+                                    
+                                </div>
+
+                                <div class="col-sm-9 pl-xs-0 mt-xs-8">
+                                    <p class="mb0 lead line-h13">Do you work in a</p>
+                                    <h5 class="font-bold mb8 line-h13 font17">PHARMACEUTICAL?</h5>
+                                    <a href="" class="font-bold font12 line-h11">See how to reach thousands of potential customers.</a>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="img/ad-2.jpg">
+                    </div>
+                </div>
+            </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
 @endsection
 
 @push('after-scripts')
