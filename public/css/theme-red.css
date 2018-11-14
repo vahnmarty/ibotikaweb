@@ -3137,6 +3137,37 @@ img {
 .border-thick.col-sm-6:last-child {
   border-left: 8px solid #fff;
 }
+.horizontal-tile {
+  overflow: hidden;
+}
+.horizontal-tile:not(:last-of-type) {
+  margin-bottom: 30px;
+}
+.tile-left,
+.tile-right {
+  width: 50%;
+  float: left;
+  display: inline-block;
+  overflow: hidden;
+  min-height: 300px;
+  position: relative;
+}
+.tile-right .description,
+.tile-left .description {
+  padding: 32px;
+}
+.tile-right:hover .background-image-holder,
+.tile-left:hover .background-image-holder {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+}
+@media all and (max-width: 767px) {
+  .tile-left,
+  .tile-right {
+    width: 100%;
+    float: none;
+  }
+}
 /*!---------- 23. SLIDERS ----------*/
 .image-slider {
   position: relative;

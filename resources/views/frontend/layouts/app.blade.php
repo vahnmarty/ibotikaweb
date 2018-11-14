@@ -16,7 +16,28 @@
                 @include('includes.partials.messages')
             </section>
 
-            @yield('content')
+            @include('frontend.includes.search-banner')
+
+            <section class="bg-secondary pb48">
+                <div class="container">
+                    <div class="row">
+
+                        <!-- MAIN CONTENT -->
+                        <div class="col-sm-12 col-md-8">
+                            @yield('content')
+                        </div>
+
+                        <!-- SIDEBAR -->
+                        <div class="col-sm-12 col-md-4 mt-sm-32">
+                            @include('frontend.includes.sidebar')
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </section>
+
+            @include('frontend.includes.platforms')
 
             @include('frontend.includes.footer')
             
