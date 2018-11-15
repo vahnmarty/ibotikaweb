@@ -21,8 +21,8 @@
         <div class="nav-bar">
             <div class="module left">
                 <a href="{{ url('/') }}">
-                    <img class="logo logo-light" alt="Foundry" src="img/logo-light.png">
-                    <img class="image-xs logo-dark" alt="Foundry" src="img/logo-light.png">
+                    <img class="logo logo-light" alt="Foundry" src="../../img/logo-light.png">
+                    <img class="image-xs logo-dark" alt="Foundry" src="../../img/logo-light.png">
                 </a>
             </div>
             <div class="module widget-handle mobile-toggle right visible-sm visible-xs">

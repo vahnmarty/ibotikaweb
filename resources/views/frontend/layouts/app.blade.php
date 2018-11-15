@@ -17,6 +17,7 @@
             </section>
 
             @include('frontend.includes.search-banner')
+            
 
             <section class="bg-secondary pb48">
                 <div class="container">
@@ -41,6 +42,8 @@
 
             @include('frontend.includes.footer')
             
+           
+
         </div>
         
     @include('frontend.includes.scripts')

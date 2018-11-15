@@ -1,36 +1,31 @@
 <div class="feature feature-3 boxed">
         <h5 class="font-bold">PHARMACIES NEAR YOU</h5>
 
-        <div class="pharmacy-near">
-            <a href=""><h5 class="font-bold color-blue mb0">FK Pharmacy</h5></a>
-            <p class="mb0">General Aguinaldo Branch</p>
-            <p class="color-lightgray"><em>0.2km</em></p>
-        </div>
+        @if(session()->has('location'))
 
-        <div class="pharmacy-near mt16">
-            <a href=""><h5 class="font-bold color-blue mb0">Loys Pharmacy</h5></a>
-            <p class="mb0">Quezon Avenue Branch</p>
-            <p class="color-lightgray"><em>0.3km</em></p>
-        </div>
-
-        <div class="pharmacy-near mt16">
-            <a href=""><h5 class="font-bold color-blue mb0">Pharmville Pharmacy</h5></a>
-            <p class="mb0">General Aguinaldo Branch</p>
-            <p class="color-lightgray"><em>0.3km</em></p>
-        </div>
-
-        <div class="pharmacy-near mt16">
-            <a href=""><h5 class="font-bold color-blue mb0">Get Well Pharmacy</h5></a>
-            <p class="mb0">Tibanga Branch</p>
-            <p class="color-lightgray"><em>0.4km</em></p>
-        </div>
-
-        <div class="pharmacy-near mt16">
-            <a href=""><h5 class="font-bold color-blue mb0">Rose Pharmacy</h5></a>
-            <p class="mb0">Tibanga Branch</p>
-            <p class="color-lightgray"><em>0.4km</em></p>
-        </div>
-
+            @foreach(pharmacy_nearby() as $pharmacy)
+            <div class="pharmacy-near">
+                <a href=""><h5 class="font-bold color-blue mb0">{{ $pharmacy->name }}y</h5></a>
+                <p class="mb0">{{ $pharmacy->branch }}</p>
+                <p class="color-lightgray"><em>{{ $pharmacy->distance }}km</em></p>
+            </div>
+            @endforeach
+            <a href="" class="btn btn-lg btn-filled mt24 display-block">Search for Pharmacies</a>
+        @else
         
-        <a href="" class="btn btn-lg btn-filled mt24 display-block">Search for Pharmacies</a>
-    </div>
+        <p class="text-danger">We cannot fetch your address, please manually enter your address here for a better performance.</p>
+        <form class="form-location" action="{{ url('location') }}">
+            @csrf
+            <input type="hidden" name="latitude" id="latitude">
+            <input type="hidden" name="longitude" id="longitude">
+            <input type="hidden" name="address1" id="neighborhood">
+            <input type="hidden" name="city" id="locality">
+            <input type="hidden" name="state" id="administrative_area_level_1">
+            <input type="hidden" name="country" id="country">
+            <input type="text" name="full_address" id="autocomplete" onfocus="geolocate()"  placeholder="Enter your address here" required style="border: 1px solid #ddd" />
+            <input type="submit" class="btn-white mb0 btn btn-sm" value="Submit" />
+        </form>        
+        @endif
+        
+        
+</div>

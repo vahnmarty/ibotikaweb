@@ -364,6 +364,9 @@ $(document).ready(function() {
         if(linkedModal.find('iframe').length){
         	linkedModal.find('iframe').attr('src', linkedModal.find('iframe').attr('data-src'));
         }
+        if(linkedModal.find('.modal-focus').length){
+            linkedModal.find('iframe').attr('src', linkedModal.find('iframe').attr('data-src'));
+        }
         linkedModal.toggleClass('reveal-modal');
         return false;
     });
@@ -390,13 +393,8 @@ $(document).ready(function() {
 	});
     
     $('.close-modal:not(.modal-strip .close-modal)').click(function(){
-    	var modal = $(this).closest('.foundry_modal');
-        modal.toggleClass('reveal-modal');
-        if(typeof modal.attr('data-cookie') != "undefined"){
-            mr_cookies.setItem(modal.attr('data-cookie'), "true", Infinity);
-        }
-    	
-        $('.modal-screen').toggleClass('reveal-modal');
+        $('.modal-screen').removeClass('reveal-modal');
+        $('.foundry_modal').removeClass('reveal-modal');
     });
     
     $('.modal-screen').click(function(){

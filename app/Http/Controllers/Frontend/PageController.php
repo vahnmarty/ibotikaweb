@@ -31,4 +31,28 @@ class PageController extends Controller
     {
     	return view('frontend.pages.about');
     }
+
+    public function search(Request $request)
+    {
+        switch ($request->type) 
+        {
+            case 'medicines':
+                $url = url('/product/search') . '?keyword=' . $request->medicine . '&reference=' . $request->reference ;
+                break;
+
+            case 'pharmacies':
+                $url = url('/pharmacy/search?') ;
+                break;
+
+            case 'diseases':
+                $url = url('/health/search?');
+                break;
+            
+            default:
+                $url = url('/product/search?');
+                break;
+        }
+
+        return redirect($url);
+    }
 }

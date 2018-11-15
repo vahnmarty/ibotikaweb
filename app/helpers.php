@@ -6,6 +6,61 @@ use App\Helpers\General\HtmlHelper;
 /*
  * Global helpers file with misc functions.
  */
+
+if (! function_exists('get_address')) {
+    /**
+     * Helper to grab the application name.
+     *
+     * @return mixed
+     */
+    function get_address()
+    {
+        if(session()->has('location')){
+            $data = session()->get('location');
+            return $data['full_address'];
+        }
+        return false;
+    }
+}
+
+if (! function_exists('get_location')) {
+    /**
+     * Helper to grab the application name.
+     *
+     * @return mixed
+     */
+    function get_location()
+    {
+        return session()->get('location');
+    }
+}
+
+if (! function_exists('pharmacy_nearby')) {
+    /**
+     * Helper to grab the application name.
+     *
+     * @return mixed
+     */
+    function pharmacy_nearby()
+    {
+        $location = session()->get('location');
+        return  \App\Models\Plus\Branch::nearby($location['latitude'], $location['longitude'])->get()->take(5);
+    }
+}
+
+
+if (! function_exists('api_url')) {
+    /**
+     * Helper to grab the application name.
+     *
+     * @return mixed
+     */
+    function api_url()
+    {
+        return 'http://api.ibotika.localhost/';
+    }
+}
+
 if (! function_exists('app_name')) {
     /**
      * Helper to grab the application name.

@@ -4,7 +4,7 @@
             <div class="col-sm-4">
                 <div class="col-sm-12 mb16 v-align-children">
                     <div class="col-sm-12 col-md-3 pl0 pr0 mb-sm-8">
-                        <img class="image-md" src="img/pharmacy.png">
+                        <img class="image-md" src="../../img/pharmacy.png">
                         
                     </div>
 
@@ -19,7 +19,7 @@
             <div class="col-sm-4 mt-xs-24">
                 <div class="col-sm-12 mb16 v-align-children">
                     <div class="col-md-3 col-sm-12 pl0 pr0 mb-sm-8">
-                        <img class="image-md" src="img/doctor.png">
+                        <img class="image-md" src="../../img/doctor.png">
                         
                     </div>
 
@@ -34,7 +34,7 @@
             <div class="col-sm-4 mt-xs-24">
                 <div class="col-sm-12 mb16 v-align-children">
                     <div class="col-md-3 col-sm-12 pl0 pr0 mb-sm-8">
-                        <img class="image-md" src="img/pharma.png">
+                        <img class="image-md" src="../../img/pharma.png">
                         
                     </div>
 
@@ -50,7 +50,7 @@
 </section>
 <section class="image-bg pt96 pb96 pt-xs-80 pb-xs-80">
     <div class="background-image-holder">
-        <img alt="image" class="background-image" src="img/banner-1.jpg">
+        <img alt="image" class="background-image" src="../../img/banner-1.jpg">
     </div>
     
     <div class="container">
@@ -64,7 +64,7 @@
             </div>
 
             <div class="col-md-3 col-sm-6 mt43 mt-sm-0 text-center">
-                <img src="img/web.png">
+                <img src="../../img/web.png">
                 <h4 class="mt32 mb8 font-bold">WEB</h4>
                 <h6 class="mb24 mb-xs-32">
                     WEB-BASED ONLINE<br>MEDS FINDER
@@ -73,7 +73,7 @@
             </div>
 
             <div class="col-md-2 col-sm-6 mt-sm-48 text-center">
-                <img src="img/app.png">
+                <img src="../../img/app.png">
                 <h4 class="mt32 mb8 font-bold">APP</h4>
                 <h6 class="mb24 mb-xs-32">
                     MOBILE APP ONLINE<br>MEDS FINDER
@@ -82,7 +82,7 @@
             </div>
 
             <div class="col-md-3 col-sm-6 mt16 mt-sm-64 text-center">
-                <img src="img/plus.png">
+                <img src="../../img/plus.png">
                 <h4 class="mt32 mb8 font-bold">PLUS</h4>
                 <h6 class="mb24 mb-xs-32">
                     PHARMACY INVENTORY<br>+ POS SYSTEMS

@@ -2,7 +2,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-3 col-sm-3">
-                            <a href="#"><img class="" alt="Pic" src="img/footer-logo.png"></a>
+                            <a href="#"><img class="" alt="Pic" src="../../img/footer-logo.png"></a>
                         </div>
                     
                         <div class="col-md-2 col-sm-2 col-xs-6 mt-xs-24">
