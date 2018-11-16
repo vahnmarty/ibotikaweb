@@ -11,7 +11,7 @@
                     <div class="col-sm-12 col-md-9 pl-sm-0">
                         <p class="mb0 lead line-h13">Are you a</p>
                         <h5 class="font-bold mb8 line-h13 font17">PHARMACY OWNER?</h5>
-                        <a href="http://pixzeldigital.com/demo/ibotika/plus" class="font-bold font12">See how iBotika Plus can help.</a>
+                        <a href="http://plus.ibotika.com" target="_blank" class="font-bold font12">See how iBotika Plus can help.</a>
                     </div>
                 </div>
             </div>
@@ -26,7 +26,7 @@
                     <div class="col-md-9 col-sm-12 pl-sm-0">
                         <p class="mb0 lead line-h13">Are you a</p>
                         <h5 class="font-bold mb8 line-h13 font17">DOCTOR?</h5>
-                        <a href="http://pixzeldigital.com/demo/ibotika/app" class="font-bold font12">See how iBotika App can help.</a>
+                        <a href="http://app.ibotika.com" target="_blank class="font-bold font12">See how iBotika App can help.</a>
                     </div>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                     <div class="col-md-9 col-sm-12 pl-sm-0">
                         <p class="mb0 lead line-h13">Do you work in a</p>
                         <h5 class="font-bold mb8 line-h13 font17">PHARMACEUTICAL?</h5>
-                        <a href="http://pixzeldigital.com/demo/ibotika/web" class="font-bold font12 line-h11">See how to reach thousands of potential customers.</a>
+                        <a href="http://web.ibotika.com" target="_blank" class="font-bold font12 line-h11">See how to reach thousands of potential customers.</a>
                     </div>
                 </div>
             </div>
@@ -60,7 +60,7 @@
                 <p class="mb32 mb-xs-32">
                     To provide the public an easy access to medicine information and availability by connecting them to local pharmacies.
                 </p>
-                <a href="" class="font-bold">Discover the iBotika Family</a>
+                <a href="#" class="font-bold">Discover the iBotika Family</a>
             </div>
 
             <div class="col-md-3 col-sm-6 mt43 mt-sm-0 text-center">
@@ -69,7 +69,7 @@
                 <h6 class="mb24 mb-xs-32">
                     WEB-BASED ONLINE<br>MEDS FINDER
                 </h6>
-                <a href="" class="btn btn-white-bg font-bold">Learn More</a>
+                <a href="http://web.ibotika.com" target="_blank" class="btn btn-white-bg font-bold">Learn More</a>
             </div>
 
             <div class="col-md-2 col-sm-6 mt-sm-48 text-center">
@@ -78,7 +78,7 @@
                 <h6 class="mb24 mb-xs-32">
                     MOBILE APP ONLINE<br>MEDS FINDER
                 </h6>
-                <a href="" class="btn btn-white-bg font-bold">Learn More</a>
+                <a href="http://app.ibotika.com" target="_blank" class="btn btn-white-bg font-bold">Learn More</a>
             </div>
 
             <div class="col-md-3 col-sm-6 mt16 mt-sm-64 text-center">
@@ -87,7 +87,7 @@
                 <h6 class="mb24 mb-xs-32">
                     PHARMACY INVENTORY<br>+ POS SYSTEMS
                 </h6>
-                <a href="" class="btn btn-white-bg font-bold">Learn More</a>
+                <a href="http://plus.ibotika.com" target="_blank" class="btn btn-white-bg font-bold">Learn More</a>
             </div>
         </div>
         

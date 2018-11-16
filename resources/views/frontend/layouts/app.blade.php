@@ -17,7 +17,7 @@
             </section>
 
             @include('frontend.includes.search-banner')
-            
+            @include('frontend.includes.login_modal')
 
             <section class="bg-secondary pb48">
                 <div class="container">

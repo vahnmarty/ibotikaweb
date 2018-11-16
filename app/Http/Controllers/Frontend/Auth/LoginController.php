@@ -85,6 +85,9 @@ class LoginController extends Controller
             resolve(UserSessionRepository::class)->clearSessionExceptCurrent($user);
         }
 
+        if($request->has('url'))
+            return back();
+
         return redirect()->intended($this->redirectPath());
     }
 

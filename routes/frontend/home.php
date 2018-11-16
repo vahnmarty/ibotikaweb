@@ -15,6 +15,8 @@ Route::post('location', 'LocationController@store')->name('location.store');
 Route::get('product/search', 'ProductController@search')->name('product.search');
 Route::get('product/{product}', 'ProductController@show')->name('product.show');
 
+Route::get('pharmacy/{branch}/{slug}', 'PharmacyController@show')->name('pharmacy.branch.show');
+
 Route::group(['middleware' => ['auth', 'password_expires']], function () {
     Route::group(['namespace' => 'User', 'as' => 'user.'], function () {
         Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');

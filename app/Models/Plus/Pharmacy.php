@@ -11,4 +11,8 @@ class Pharmacy extends Model
     public function scopeSearch($query, $keyword){
     	return $query->where('name', 'LIKE', '%' . $keyword . '%');
     }
+
+    public function branches(){
+    	return $this->hasMany('App\Models\Plus\Branch');
+    }
 }
