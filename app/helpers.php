@@ -8,7 +8,7 @@ use App\Helpers\General\HtmlHelper;
  */
 
 if (! function_exists('distance')) {
-    
+
     function distance($lat1, $lon1, $lat2, $lon2, $unit) {
 
       $theta = $lon1 - $lon2;
@@ -78,7 +78,7 @@ if (! function_exists('api_url')) {
      */
     function api_url()
     {
-        return 'http://api.ibotika.localhost/';
+        return env('API_URL', 'http://api.ibotika.com/') ;
     }
 }
 
