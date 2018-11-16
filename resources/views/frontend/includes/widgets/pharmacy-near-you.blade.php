@@ -5,7 +5,7 @@
 
             @foreach(pharmacy_nearby() as $pharmacy)
             <div class="pharmacy-near">
-                <a href=""><h5 class="font-bold color-blue mb0">{{ $pharmacy->name }}y</h5></a>
+                <a href=""><h5 class="font-bold color-blue mb0">{{ $pharmacy->name }}</h5></a>
                 <p class="mb0">{{ $pharmacy->branch }}</p>
                 <p class="color-lightgray"><em>{{ $pharmacy->distance }}km</em></p>
             </div>
