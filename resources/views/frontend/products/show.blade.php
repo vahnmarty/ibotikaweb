@@ -160,17 +160,13 @@
     		<div class="feature feature-3 boxed">
             	<h5 class="font-bold">Related Drugs</h5>
 
+            	@forelse($related_drugs as $i => $drug)
             	<div class="pharmacy-near">
-            		<a href=""><h5 class="font-bold color-blue mb0">Tuseran</h5></a>
+            		<a href="{{ url('/product/search') . '?keyword=' . $drug->name . '&reference=' . $drug->reference }}"><h5 class="font-bold color-blue mb0">{{ $drug->name }}</h5></a>
             	</div>
-
-            	<div class="pharmacy-near mt16">
-            		<a href=""><h5 class="font-bold color-blue mb0">Decolgen</h5></a>
-            	</div>
-
-            	<div class="pharmacy-near mt16">
-            		<a href=""><h5 class="font-bold color-blue mb0">Ibuprofen</h5></a>
-            	</div>
+            	@empty
+            	<p>Sorry, we cannot fetch drugs related to {{ $data->product }}</p>
+            	@endforelse
             </div>
         </div>
 
