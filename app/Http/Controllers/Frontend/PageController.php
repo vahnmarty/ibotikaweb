@@ -45,7 +45,7 @@ class PageController extends Controller
                 break;
 
             case 'diseases':
-                $url = url('/health/search?');
+                $url = url('/health/search') . '?keyword=' . $request->disease . '&reference=' . $request->reference;
                 break;
             
             default:

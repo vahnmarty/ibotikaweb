@@ -12,8 +12,20 @@ Route::get('contact', [ContactController::class, 'index'])->name('contact');
 Route::post('contact/send', [ContactController::class, 'send'])->name('contact.send');
 Route::post('location', 'LocationController@store')->name('location.store');
 
-Route::get('product/search', 'ProductController@search')->name('product.search');
-Route::get('product/{product}', 'ProductController@show')->name('product.show');
+
+Route::group(['prefix' => 'product'], function(){
+	Route::get('search', 'ProductController@search')->name('product.search');
+	Route::get('detail', 'ProductController@detail')->name('product.detail');
+	Route::get('{product}', 'ProductController@show')->name('product.show');
+});
+
+Route::group(['prefix' => 'health'], function(){
+	Route::get('search', 'HealthController@search')->name('health.search');
+});
+
+Route::group(['prefix' => 'pharmacy'], function(){
+	Route::get('autocomplete', 'PharmacyController@autocomplete')->name('pharmacy.autocomplete');
+});
 
 Route::get('pharmacy/{branch}/{slug}', 'PharmacyController@show')->name('pharmacy.branch.show');
 

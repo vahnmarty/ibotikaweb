@@ -64,7 +64,7 @@ if (! function_exists('pharmacy_nearby')) {
      */
     function pharmacy_nearby()
     {
-        $location = session()->get('location');
+        $location = get_location();
         return  \App\Models\Plus\Branch::nearby($location['latitude'], $location['longitude'])->get()->take(5);
     }
 }
