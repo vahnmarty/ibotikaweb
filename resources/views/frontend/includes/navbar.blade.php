@@ -13,9 +13,9 @@
                 <span class="sub">info@ibotika.com</span>
             </div>
             <div class="module right top10">
-                <a class="btn btn-active mt10" href="http://pixzeldigital.com/demo/ibotika/web">iBotika Web</a>
-                <a class="btn mt10" href="http://pixzeldigital.com/demo/ibotika/app">iBotika App</a>
-                <a class="btn mt10" href="http://pixzeldigital.com/demo/ibotika/plus/">iBotika Plus</a>
+                <a class="btn btn-active mt10" href="http://web.ibotika.com">iBotika Web</a>
+                <a class="btn mt10" href="http://app.ibotika.com">iBotika App</a>
+                <a class="btn mt10" href="http://plus.ibotika.com/">iBotika Plus</a>
             </div>
         </div>
         <div class="nav-bar">
