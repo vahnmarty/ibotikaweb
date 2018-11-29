@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call(AuthTableSeeder::class);
+        $this->call(ActionTableSeeder::class);
 
         Model::reguard();
     }
