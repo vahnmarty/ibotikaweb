@@ -47,7 +47,7 @@ class CreateUserActivities extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('actions');
         Schema::dropIfExists('activities');
+        Schema::dropIfExists('actions');
     }
 }

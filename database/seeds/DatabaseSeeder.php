@@ -24,7 +24,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call(AuthTableSeeder::class);
         $this->call(ActionTableSeeder::class);
-
+        $this->call(WebhookTableSeeder::class);
+        
         Model::reguard();
     }
 }
