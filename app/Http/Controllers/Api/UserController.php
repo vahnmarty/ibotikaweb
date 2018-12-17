@@ -21,13 +21,17 @@ class UserController extends Controller
     	// http://web.ibotika.localhost/api/user/register?token=123&secret=123&first_name=Vahn&last_name=Marty&email=vannix@gmail.com&username=vannix&password=12345678&password_confirmation=12345678
     	
     	$data = json_decode($request->payload, true);
+    	if(!$data){
+    		$data = $request->all();
+    	}
 
     	$validator = Validator::make($data,[
 	        'first_name'=> 'required|string|max:255',
     	    'last_name' => 'required|string|max:255',
     	    'email' 	=> 'required|string|max:255|email',
     	    'username' 	=> 'required|string|max:50|unique:users',
-    	    'password' 	=> 'required|string|min:6|confirmed'
+    	    'password' 	=> 'required|string|min:6|confirmed',
+    	    'cellphone' => 'required'
     	]);
 
     	if ($validator->fails()) {
@@ -43,6 +47,7 @@ class UserController extends Controller
 	    	'last_name'         => $data['last_name'],
 	    	'email'             => $data['email'],	    	
 	    	'password'          => bcrypt($data['password']),
+	    	'username'			=> $data['username'],
 	    	'type'              => 'Citizen',
 	    	'confirmation_code' => md5(uniqid(mt_rand(), true)),
 	    	'active'            => 1,
@@ -64,6 +69,11 @@ class UserController extends Controller
 
     public function login(Request $request)
     {
+    	$data = json_decode($request->payload, true);
+    	if(!$data){
+    		$data = $request->all();
+    	}
+
     	$validator = Validator::make($request->all(), [
     	    'username' 	=> 'required',
     	    'password' 	=> 'required'
