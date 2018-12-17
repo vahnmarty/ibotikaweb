@@ -37,6 +37,7 @@ class User extends Authenticatable
         'first_name',
         'last_name',
         'email',
+        'username',
         'avatar_type',
         'avatar_location',
         'password',
@@ -47,6 +48,7 @@ class User extends Authenticatable
         'timezone',
         'last_login_at',
         'last_login_ip',
+        'cellphone'
     ];
 
     /**
