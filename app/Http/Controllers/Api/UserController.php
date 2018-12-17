@@ -12,13 +12,16 @@ class UserController extends Controller
 {
     public function __construct()
     {
-    	//$this->middleware('api-auth');
+    	$this->middleware('api-auth');
     }
 
     public function register(Request $request)
     {
     	// http://web.ibotika.localhost/api/user/register?token=123&secret=123&first_name=Vahn&last_name=Marty&email=vannix@gmail.com&username=vannix&password=12345678&password_confirmation=12345678
-    	$validator = Validator::make($request->all(), [
+    	
+    	$data = json_decode($request->payload, true);
+
+    	$validator = Validator::make($data,[
 	        'first_name'=> 'required|string|max:255',
     	    'last_name' => 'required|string|max:255',
     	    'email' 	=> 'required|string|max:255|email',
@@ -35,15 +38,15 @@ class UserController extends Controller
     	
 	    $apikey = base64_encode(str_random(40));
 	    $user = User::create([
-	    	'first_name'        => $request['first_name'],
-	    	'last_name'         => $request['last_name'],
-	    	'email'             => $request['email'],	    	
-	    	'password'          => bcrypt($request['password']),
+	    	'first_name'        => $data['first_name'],
+	    	'last_name'         => $data['last_name'],
+	    	'email'             => $data['email'],	    	
+	    	'password'          => bcrypt($data['password']),
 	    	'type'              => 'Citizen',
 	    	'confirmation_code' => md5(uniqid(mt_rand(), true)),
 	    	'active'            => 1,
 	    	'confirmed'         => 1,
-	        'cellphone' 		=> $request['cellphone'],
+	        'cellphone' 		=> $data['cellphone'],
 	        'verified'  		=> true
 	    ]);
     	
